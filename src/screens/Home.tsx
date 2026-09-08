@@ -29,7 +29,7 @@ export function Home({ onOpenSession, onOpenBackup }: HomeProps) {
   };
 
   return (
-    <div className="p-4 pb-24">
+    <div className="p-4 pb-40">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Allenamento</h1>
         <button

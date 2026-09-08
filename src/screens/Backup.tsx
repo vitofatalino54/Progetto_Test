@@ -4,7 +4,7 @@ interface BackupProps {
 
 export function Backup({ onBack }: BackupProps) {
   return (
-    <div className="p-4 pb-24">
+    <div className="p-4 pb-40">
       <button onClick={onBack} className="min-h-11 text-sm text-neutral-400">
         ← Indietro
       </button>

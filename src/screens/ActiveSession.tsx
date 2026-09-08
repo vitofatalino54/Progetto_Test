@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useStore } from '../store/useStore';
 import { useRestTimer } from '../store/useRestTimer';
 import { SlotSection } from '../components/SlotSection';
+import { releaseWakeLock, requestWakeLock } from '../lib/wakeLock';
 
 interface ActiveSessionProps {
   workoutLogId: string;
@@ -28,6 +29,21 @@ export function ActiveSession({ workoutLogId, onExit }: ActiveSessionProps) {
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, [workoutLog?.startedAt]);
+
+  // Schermo sempre acceso durante la seduta: la Wake Lock API viene rilasciata
+  // automaticamente dal browser quando il tab passa in background, quindi la
+  // richiediamo di nuovo quando torna visibile.
+  useEffect(() => {
+    requestWakeLock();
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') requestWakeLock();
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      releaseWakeLock();
+    };
+  }, []);
 
   if (!workoutLog) {
     return (
@@ -80,7 +96,7 @@ export function ActiveSession({ workoutLogId, onExit }: ActiveSessionProps) {
   }
 
   return (
-    <div className="min-h-screen pb-24">
+    <div className="min-h-screen pb-40">
       <div className="sticky top-0 z-10 flex items-center justify-between bg-neutral-950/95 p-4 backdrop-blur">
         <div>
           <div className="text-lg font-bold">{workoutLog.sessionName}</div>

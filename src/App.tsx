@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useStore } from './store/useStore';
 import { BottomNav, type View } from './components/BottomNav';
+import { RestTimerBar } from './components/RestTimerBar';
 import { Home } from './screens/Home';
 import { ActiveSession } from './screens/ActiveSession';
 import { History } from './screens/History';
@@ -27,6 +28,7 @@ function App() {
       {view === 'program' && <ProgramEditor />}
       {view === 'backup' && <Backup onBack={() => setView('home')} />}
 
+      <RestTimerBar />
       {view !== 'backup' && <BottomNav view={view} hasActiveSession={hasActiveSession} onNavigate={setView} />}
     </div>
   );
