@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useStore } from '../store/useStore';
 import { exerciseVolume, formatWeight, workoutDurationMinutes, workoutVolume } from '../lib/workoutStats';
+import { SAFE_CONTENT_BOTTOM, SAFE_TOP, SAFE_X } from '../lib/safeArea';
 import type { WorkoutLog } from '../types';
 
 const dateFmt = new Intl.DateTimeFormat('it-IT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -26,7 +27,7 @@ export function History() {
   }
 
   return (
-    <div className="p-4 pb-40">
+    <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X} ${SAFE_CONTENT_BOTTOM}`}>
       <h1 className="text-2xl font-bold">Storico</h1>
 
       {completed.length === 0 ? (
@@ -65,7 +66,7 @@ function WorkoutDetail({ workout, onBack, onDelete }: { workout: WorkoutLog; onB
   const volume = workoutVolume(workout);
 
   return (
-    <div className="p-4 pb-40">
+    <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X} ${SAFE_CONTENT_BOTTOM}`}>
       <button onClick={onBack} className="min-h-11 text-sm text-neutral-400">
         ← Storico
       </button>

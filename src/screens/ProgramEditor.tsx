@@ -13,6 +13,7 @@ import {
   updateSessionName,
   updateSlotRest,
 } from '../lib/programEdit';
+import { SAFE_CONTENT_BOTTOM, SAFE_TOP, SAFE_X } from '../lib/safeArea';
 import type { ExerciseSlot, ExerciseTemplate, Program, ReferenceMaxes, SessionTemplate } from '../types';
 
 export function ProgramEditor() {
@@ -31,7 +32,7 @@ export function ProgramEditor() {
   const sessions = [...program.sessions].sort((a, b) => a.order - b.order);
 
   return (
-    <div className="p-4 pb-40">
+    <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X} ${SAFE_CONTENT_BOTTOM}`}>
       <h1 className="text-2xl font-bold">Programma</h1>
       <p className="mt-1 text-sm text-neutral-400">Modifica esercizi, serie, ripetizioni e tempi di recupero.</p>
 

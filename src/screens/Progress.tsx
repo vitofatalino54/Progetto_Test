@@ -11,6 +11,7 @@ import {
 import { useStore } from '../store/useStore';
 import { listAllExercises } from '../lib/programHelpers';
 import { bestSetEpley, exerciseMaxWeight, exerciseVolume, formatWeight } from '../lib/workoutStats';
+import { SAFE_CONTENT_BOTTOM, SAFE_TOP, SAFE_X } from '../lib/safeArea';
 
 const dateFmt = new Intl.DateTimeFormat('it-IT', { day: '2-digit', month: 'short' });
 
@@ -60,7 +61,7 @@ export function Progress() {
   const referenceMax = referenceLift ? program.referenceMaxes[referenceLift] : undefined;
 
   return (
-    <div className="p-4 pb-40">
+    <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X} ${SAFE_CONTENT_BOTTOM}`}>
       <h1 className="text-2xl font-bold">Progressi</h1>
 
       <div className="mt-4 -mx-4 overflow-x-auto px-4">

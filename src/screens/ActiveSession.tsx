@@ -3,6 +3,7 @@ import { useStore } from '../store/useStore';
 import { useRestTimer } from '../store/useRestTimer';
 import { SlotSection } from '../components/SlotSection';
 import { releaseWakeLock, requestWakeLock } from '../lib/wakeLock';
+import { SAFE_CONTENT_BOTTOM, SAFE_CONTENT_BOTTOM_SM, SAFE_TOP, SAFE_X } from '../lib/safeArea';
 
 interface ActiveSessionProps {
   workoutLogId: string;
@@ -47,7 +48,7 @@ export function ActiveSession({ workoutLogId, onExit }: ActiveSessionProps) {
 
   if (!workoutLog) {
     return (
-      <div className="p-4">
+      <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X}`}>
         <p>Nessuna sessione attiva.</p>
         <button onClick={onExit} className="mt-3 min-h-12 rounded-xl bg-neutral-800 px-4">
           Torna alla home
@@ -63,7 +64,7 @@ export function ActiveSession({ workoutLogId, onExit }: ActiveSessionProps) {
 
   if (finishing) {
     return (
-      <div className="min-h-screen p-4 pb-28">
+      <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X} ${SAFE_CONTENT_BOTTOM_SM}`}>
         <h2 className="text-xl font-bold">Fine seduta</h2>
         <p className="mt-1 text-sm text-neutral-400">Note generali: dolori, tecnica, energia, sonno...</p>
         <textarea
@@ -96,8 +97,8 @@ export function ActiveSession({ workoutLogId, onExit }: ActiveSessionProps) {
   }
 
   return (
-    <div className="min-h-screen pb-40">
-      <div className="sticky top-0 z-10 flex items-center justify-between bg-neutral-950/95 p-4 backdrop-blur">
+    <div className={`min-h-dvh ${SAFE_CONTENT_BOTTOM}`}>
+      <div className={`sticky top-0 z-10 flex items-center justify-between bg-neutral-950/95 pb-4 backdrop-blur ${SAFE_TOP} ${SAFE_X}`}>
         <div>
           <div className="text-lg font-bold">{workoutLog.sessionName}</div>
           <div className="text-sm text-neutral-400">
@@ -125,7 +126,7 @@ export function ActiveSession({ workoutLogId, onExit }: ActiveSessionProps) {
         </div>
       </div>
 
-      <div className="space-y-4 p-4">
+      <div className={`space-y-4 py-4 ${SAFE_X}`}>
         {session?.slots.map((slot) => (
           <SlotSection
             key={slot.id}

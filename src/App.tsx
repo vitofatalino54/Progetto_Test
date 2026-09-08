@@ -7,6 +7,7 @@ import { ActiveSession } from './screens/ActiveSession';
 import { History } from './screens/History';
 import { ProgramEditor } from './screens/ProgramEditor';
 import { Backup } from './screens/Backup';
+import { SAFE_TOP, SAFE_X } from './lib/safeArea';
 
 // I grafici (Recharts) pesano parecchio: caricati solo quando si apre Progressi.
 const Progress = lazy(() => import('./screens/Progress').then((m) => ({ default: m.Progress })));
@@ -17,7 +18,7 @@ function App() {
   const hasActiveSession = Boolean(activeWorkoutLogId);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-50">
+    <div className="min-h-dvh bg-neutral-950 text-neutral-50">
       {view === 'home' && <Home onOpenSession={() => setView('session')} onOpenBackup={() => setView('backup')} />}
       {view === 'session' &&
         (activeWorkoutLogId ? (
@@ -27,7 +28,7 @@ function App() {
         ))}
       {view === 'history' && <History />}
       {view === 'progress' && (
-        <Suspense fallback={<div className="p-4 text-neutral-400">Caricamento grafici...</div>}>
+        <Suspense fallback={<div className={`text-neutral-400 ${SAFE_TOP} ${SAFE_X}`}>Caricamento grafici...</div>}>
           <Progress />
         </Suspense>
       )}
