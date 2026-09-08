@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
+  <rect width="512" height="512" rx="96" fill="url(#g)" fill-opacity="0.35"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <!-- bilanciere: barra centrale + due dischi per lato -->
+  <g stroke="#f5f5f5" stroke-linecap="round">
+    <rect x="150" y="243" width="212" height="26" rx="13" fill="#f5f5f5" stroke="none"/>
+    <rect x="96" y="196" width="34" height="120" rx="10" fill="#f5f5f5" stroke="none"/>
+    <rect x="62" y="216" width="24" height="80" rx="8" fill="#f5f5f5" stroke="none"/>
+    <rect x="382" y="196" width="34" height="120" rx="10" fill="#f5f5f5" stroke="none"/>
+    <rect x="426" y="216" width="24" height="80" rx="8" fill="#f5f5f5" stroke="none"/>
+  </g>
+</svg>
