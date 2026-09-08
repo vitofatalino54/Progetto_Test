@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/*
+ * Safe area di iOS (notch / Dynamic Island in alto, home indicator in basso).
+ * Definite come token di spacing di Tailwind così diventano utility riutilizzabili
+ * (pt-safe-top, pb-safe-bottom, pl-safe-left, pr-safe-right) invece di ripetere
+ * env(safe-area-inset-*) inline nei componenti. Il fallback a 0px copre i browser
+ * che non supportano la proprietà.
+ */
+@theme {
+  --spacing-safe-top: env(safe-area-inset-top, 0px);
+  --spacing-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --spacing-safe-left: env(safe-area-inset-left, 0px);
+  --spacing-safe-right: env(safe-area-inset-right, 0px);
+}
+
 :root {
   color-scheme: dark;
 }
@@ -13,12 +27,13 @@ body,
 body {
   @apply bg-neutral-950 text-neutral-50;
   -webkit-tap-highlight-color: transparent;
-  overscroll-behavior-y: contain;
+  /* Disattiva il bounce/rubber-band dello scroll: senza, su iOS l'header e la
+     tab bar fissi "scollano" visivamente rispetto al contenuto durante l'overscroll. */
+  overscroll-behavior: none;
 }
 
-/* Evita che il pull-to-refresh del browser interferisca durante l'uso in palestra */
 html {
-  overscroll-behavior-y: contain;
+  overscroll-behavior: none;
 }
 
 input[type='number'] {

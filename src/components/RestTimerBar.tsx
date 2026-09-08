@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRestTimer } from '../store/useRestTimer';
 import { useStore } from '../store/useStore';
 import { playEndOfRestBeep, vibrate } from '../lib/sound';
+import { SAFE_TIMER_BOTTOM, SAFE_X } from '../lib/safeArea';
 
 const AUTO_DISMISS_MS = 4000;
 
@@ -52,7 +53,9 @@ export function RestTimerBar() {
   const progress = totalSeconds ? Math.min(1, Math.max(0, 1 - remainingMs / (totalSeconds * 1000))) : 0;
 
   return (
-    <div className="fixed inset-x-0 bottom-16 z-30 border-t border-neutral-800 bg-neutral-900/98 px-4 pt-2 pb-3 shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
+    <div
+      className={`fixed inset-x-0 z-30 border-t border-neutral-800 bg-neutral-900/98 pt-2 pb-3 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] ${SAFE_TIMER_BOTTOM} ${SAFE_X}`}
+    >
       <div className="h-1 w-full overflow-hidden rounded-full bg-neutral-800">
         <div
           className={`h-full rounded-full transition-[width] ${done ? 'bg-green-500' : 'bg-blue-500'}`}

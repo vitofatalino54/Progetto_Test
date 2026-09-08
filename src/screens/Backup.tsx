@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { useStore } from '../store/useStore';
+import { SAFE_CONTENT_BOTTOM, SAFE_TOP, SAFE_X } from '../lib/safeArea';
 import type { PersistedData } from '../types';
 
 interface BackupProps {
@@ -61,7 +62,7 @@ export function Backup({ onBack }: BackupProps) {
   };
 
   return (
-    <div className="p-4 pb-40">
+    <div className={`min-h-dvh ${SAFE_TOP} ${SAFE_X} ${SAFE_CONTENT_BOTTOM}`}>
       <button onClick={onBack} className="min-h-11 text-sm text-neutral-400">
         ← Indietro
       </button>

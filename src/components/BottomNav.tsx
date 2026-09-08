@@ -1,3 +1,5 @@
+import { SAFE_NAV } from '../lib/safeArea';
+
 export type View = 'home' | 'session' | 'history' | 'progress' | 'program' | 'backup';
 
 interface BottomNavProps {
@@ -16,7 +18,7 @@ const items: { key: View; label: string; icon: string }[] = [
 
 export function BottomNav({ view, hasActiveSession, onNavigate }: BottomNavProps) {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 flex border-t border-neutral-800 bg-neutral-950/95 backdrop-blur">
+    <nav className={`fixed inset-x-0 bottom-0 z-20 flex border-t border-neutral-800 bg-neutral-950/95 backdrop-blur ${SAFE_NAV}`}>
       {items.map((item) => {
         if (item.key === 'session' && !hasActiveSession) return null;
         const active = view === item.key;
