@@ -1,0 +1,297 @@
+{
+  "id": "program-default",
+  "name": "Programma Upper/Lower/Total",
+  "referenceMaxes": { "bench": 120, "squat": 158, "deadlift": 203 },
+  "sessions": [
+    {
+      "id": "session-a",
+      "name": "A - Upper body",
+      "order": 0,
+      "slots": [
+        {
+          "id": "a-1",
+          "type": "single",
+          "restSeconds": 150,
+          "exercises": [
+            {
+              "id": "ex-panca-piana",
+              "name": "Panca piana bilanciere",
+              "targetSets": 4,
+              "targetReps": 5,
+              "loadStep": { "small": 2.5, "large": 5 },
+              "highlight": true
+            }
+          ]
+        },
+        {
+          "id": "a-2",
+          "type": "single",
+          "restSeconds": 90,
+          "exercises": [
+            {
+              "id": "ex-trazioni",
+              "name": "Trazioni o lat machine",
+              "targetSets": 4,
+              "targetReps": 8,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "a-3",
+          "type": "single",
+          "restSeconds": 90,
+          "exercises": [
+            {
+              "id": "ex-military-press",
+              "name": "Military press manubri in piedi",
+              "targetSets": 3,
+              "targetReps": 8,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "a-4",
+          "type": "single",
+          "restSeconds": 90,
+          "exercises": [
+            {
+              "id": "ex-rematore-bilanciere",
+              "name": "Rematore bilanciere",
+              "targetSets": 3,
+              "targetReps": 8,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "a-5",
+          "type": "superset",
+          "restSeconds": 60,
+          "exercises": [
+            {
+              "id": "ex-alzate-laterali",
+              "name": "Alzate laterali",
+              "targetSets": 3,
+              "targetReps": 12,
+              "loadStep": { "small": 1.25, "large": 2.5 }
+            },
+            {
+              "id": "ex-french-press",
+              "name": "French press",
+              "targetSets": 3,
+              "targetReps": 12,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "a-6",
+          "type": "superset",
+          "restSeconds": 60,
+          "exercises": [
+            {
+              "id": "ex-curl-manubri",
+              "name": "Curl manubri",
+              "targetSets": 3,
+              "targetReps": 12,
+              "loadStep": { "small": 1.25, "large": 2.5 }
+            },
+            {
+              "id": "ex-face-pull",
+              "name": "Face pull",
+              "targetSets": 3,
+              "targetReps": 12,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-b",
+      "name": "B - Lower body",
+      "order": 1,
+      "slots": [
+        {
+          "id": "b-1",
+          "type": "single",
+          "restSeconds": 180,
+          "exercises": [
+            {
+              "id": "ex-squat",
+              "name": "Squat bilanciere",
+              "targetSets": 4,
+              "targetReps": 5,
+              "loadStep": { "small": 2.5, "large": 5 },
+              "highlight": true
+            }
+          ]
+        },
+        {
+          "id": "b-2",
+          "type": "single",
+          "restSeconds": 120,
+          "exercises": [
+            {
+              "id": "ex-stacco-rumeno",
+              "name": "Stacco rumeno",
+              "targetSets": 3,
+              "targetReps": 8,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "b-3",
+          "type": "single",
+          "restSeconds": 90,
+          "exercises": [
+            {
+              "id": "ex-pressa-affondi",
+              "name": "Pressa 45° o affondi camminati",
+              "targetSets": 3,
+              "targetReps": 10,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "b-4",
+          "type": "single",
+          "restSeconds": 60,
+          "exercises": [
+            {
+              "id": "ex-leg-curl",
+              "name": "Leg curl sdraiato",
+              "targetSets": 3,
+              "targetReps": 12,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "b-5",
+          "type": "superset",
+          "restSeconds": 60,
+          "exercises": [
+            {
+              "id": "ex-calf",
+              "name": "Calf in piedi",
+              "targetSets": 3,
+              "targetReps": 15,
+              "loadStep": { "small": 2.5, "large": 5 }
+            },
+            {
+              "id": "ex-plank",
+              "name": "Plank",
+              "targetSets": 3,
+              "targetReps": 15,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-c",
+      "name": "C - Total body",
+      "order": 2,
+      "slots": [
+        {
+          "id": "c-1",
+          "type": "single",
+          "restSeconds": 180,
+          "exercises": [
+            {
+              "id": "ex-stacco-terra",
+              "name": "Stacco da terra",
+              "targetSets": 4,
+              "targetReps": 4,
+              "loadStep": { "small": 2.5, "large": 5 },
+              "highlight": true
+            }
+          ]
+        },
+        {
+          "id": "c-2",
+          "type": "single",
+          "restSeconds": 120,
+          "exercises": [
+            {
+              "id": "ex-panca-inclinata-manubri",
+              "name": "Panca inclinata manubri",
+              "targetSets": 3,
+              "targetReps": 8,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "c-3",
+          "type": "single",
+          "restSeconds": 120,
+          "exercises": [
+            {
+              "id": "ex-front-squat",
+              "name": "Front squat o goblet squat",
+              "targetSets": 3,
+              "targetReps": 8,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "c-4",
+          "type": "single",
+          "restSeconds": 90,
+          "exercises": [
+            {
+              "id": "ex-pulley-basso",
+              "name": "Pulley basso o rematore manubrio",
+              "targetSets": 3,
+              "targetReps": 10,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        },
+        {
+          "id": "c-5",
+          "type": "superset",
+          "restSeconds": 60,
+          "exercises": [
+            {
+              "id": "ex-dip-pushdown",
+              "name": "Dip o push-down",
+              "targetSets": 3,
+              "targetReps": 10,
+              "loadStep": { "small": 2.5, "large": 5 }
+            },
+            {
+              "id": "ex-hammer-curl",
+              "name": "Hammer curl",
+              "targetSets": 3,
+              "targetReps": 10,
+              "loadStep": { "small": 1.25, "large": 2.5 }
+            }
+          ]
+        },
+        {
+          "id": "c-6",
+          "type": "single",
+          "restSeconds": 60,
+          "exercises": [
+            {
+              "id": "ex-ab-wheel",
+              "name": "Ab wheel o crunch ai cavi",
+              "targetSets": 3,
+              "targetReps": 12,
+              "loadStep": { "small": 2.5, "large": 5 }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
