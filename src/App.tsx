@@ -1,22 +1,33 @@
+import { useState } from 'react';
 import { useStore } from './store/useStore';
+import { BottomNav, type View } from './components/BottomNav';
+import { Home } from './screens/Home';
+import { ActiveSession } from './screens/ActiveSession';
+import { History } from './screens/History';
+import { Progress } from './screens/Progress';
+import { ProgramEditor } from './screens/ProgramEditor';
+import { Backup } from './screens/Backup';
 
 function App() {
-  const program = useStore((s) => s.program);
-  const workoutLogs = useStore((s) => s.workoutLogs);
+  const [view, setView] = useState<View>('home');
+  const activeWorkoutLogId = useStore((s) => s.activeWorkoutLogId);
+  const hasActiveSession = Boolean(activeWorkoutLogId);
 
   return (
-    <div className="min-h-screen p-4">
-      <h1 className="text-2xl font-bold">{program.name}</h1>
-      <p className="mt-2 text-neutral-400">Sedute caricate: {program.sessions.length}</p>
-      <ul className="mt-4 space-y-2">
-        {program.sessions.map((s) => (
-          <li key={s.id} className="rounded-xl bg-neutral-900 p-4">
-            <div className="font-semibold">{s.name}</div>
-            <div className="text-sm text-neutral-400">{s.slots.length} slot esercizio</div>
-          </li>
+    <div className="min-h-screen bg-neutral-950 text-neutral-50">
+      {view === 'home' && <Home onOpenSession={() => setView('session')} onOpenBackup={() => setView('backup')} />}
+      {view === 'session' &&
+        (activeWorkoutLogId ? (
+          <ActiveSession workoutLogId={activeWorkoutLogId} onExit={() => setView('home')} />
+        ) : (
+          <Home onOpenSession={() => setView('session')} onOpenBackup={() => setView('backup')} />
         ))}
-      </ul>
-      <p className="mt-4 text-sm text-neutral-500">Sedute registrate in storico: {workoutLogs.length}</p>
+      {view === 'history' && <History />}
+      {view === 'progress' && <Progress />}
+      {view === 'program' && <ProgramEditor />}
+      {view === 'backup' && <Backup onBack={() => setView('home')} />}
+
+      {view !== 'backup' && <BottomNav view={view} hasActiveSession={hasActiveSession} onNavigate={setView} />}
     </div>
   );
 }
