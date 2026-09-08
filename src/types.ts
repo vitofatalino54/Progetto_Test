@@ -15,6 +15,8 @@ export interface ExerciseTemplate {
   loadStep: LoadStep;
   /** In evidenza nella schermata Progressi (panca / squat / stacco) */
   highlight?: boolean;
+  /** Se impostato, in Progressi mostra anche il confronto % con referenceMaxes */
+  referenceLift?: keyof ReferenceMaxes;
 }
 
 export interface ExerciseSlot {

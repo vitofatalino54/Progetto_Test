@@ -1,7 +1,11 @@
 {
   "id": "program-default",
   "name": "Programma Upper/Lower/Total",
-  "referenceMaxes": { "bench": 120, "squat": 158, "deadlift": 203 },
+  "referenceMaxes": {
+    "bench": 120,
+    "squat": 158,
+    "deadlift": 203
+  },
   "sessions": [
     {
       "id": "session-a",
@@ -18,8 +22,12 @@
               "name": "Panca piana bilanciere",
               "targetSets": 4,
               "targetReps": 5,
-              "loadStep": { "small": 2.5, "large": 5 },
-              "highlight": true
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              },
+              "highlight": true,
+              "referenceLift": "bench"
             }
           ]
         },
@@ -33,7 +41,10 @@
               "name": "Trazioni o lat machine",
               "targetSets": 4,
               "targetReps": 8,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -47,7 +58,10 @@
               "name": "Military press manubri in piedi",
               "targetSets": 3,
               "targetReps": 8,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -61,7 +75,10 @@
               "name": "Rematore bilanciere",
               "targetSets": 3,
               "targetReps": 8,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -75,14 +92,20 @@
               "name": "Alzate laterali",
               "targetSets": 3,
               "targetReps": 12,
-              "loadStep": { "small": 1.25, "large": 2.5 }
+              "loadStep": {
+                "small": 1.25,
+                "large": 2.5
+              }
             },
             {
               "id": "ex-french-press",
               "name": "French press",
               "targetSets": 3,
               "targetReps": 12,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -96,14 +119,20 @@
               "name": "Curl manubri",
               "targetSets": 3,
               "targetReps": 12,
-              "loadStep": { "small": 1.25, "large": 2.5 }
+              "loadStep": {
+                "small": 1.25,
+                "large": 2.5
+              }
             },
             {
               "id": "ex-face-pull",
               "name": "Face pull",
               "targetSets": 3,
               "targetReps": 12,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         }
@@ -124,8 +153,12 @@
               "name": "Squat bilanciere",
               "targetSets": 4,
               "targetReps": 5,
-              "loadStep": { "small": 2.5, "large": 5 },
-              "highlight": true
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              },
+              "highlight": true,
+              "referenceLift": "squat"
             }
           ]
         },
@@ -139,7 +172,10 @@
               "name": "Stacco rumeno",
               "targetSets": 3,
               "targetReps": 8,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -153,7 +189,10 @@
               "name": "Pressa 45° o affondi camminati",
               "targetSets": 3,
               "targetReps": 10,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -167,7 +206,10 @@
               "name": "Leg curl sdraiato",
               "targetSets": 3,
               "targetReps": 12,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -181,14 +223,20 @@
               "name": "Calf in piedi",
               "targetSets": 3,
               "targetReps": 15,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             },
             {
               "id": "ex-plank",
               "name": "Plank",
               "targetSets": 3,
               "targetReps": 15,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         }
@@ -209,8 +257,12 @@
               "name": "Stacco da terra",
               "targetSets": 4,
               "targetReps": 4,
-              "loadStep": { "small": 2.5, "large": 5 },
-              "highlight": true
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              },
+              "highlight": true,
+              "referenceLift": "deadlift"
             }
           ]
         },
@@ -224,7 +276,10 @@
               "name": "Panca inclinata manubri",
               "targetSets": 3,
               "targetReps": 8,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -238,7 +293,10 @@
               "name": "Front squat o goblet squat",
               "targetSets": 3,
               "targetReps": 8,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -252,7 +310,10 @@
               "name": "Pulley basso o rematore manubrio",
               "targetSets": 3,
               "targetReps": 10,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         },
@@ -266,14 +327,20 @@
               "name": "Dip o push-down",
               "targetSets": 3,
               "targetReps": 10,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             },
             {
               "id": "ex-hammer-curl",
               "name": "Hammer curl",
               "targetSets": 3,
               "targetReps": 10,
-              "loadStep": { "small": 1.25, "large": 2.5 }
+              "loadStep": {
+                "small": 1.25,
+                "large": 2.5
+              }
             }
           ]
         },
@@ -287,7 +354,10 @@
               "name": "Ab wheel o crunch ai cavi",
               "targetSets": 3,
               "targetReps": 12,
-              "loadStep": { "small": 2.5, "large": 5 }
+              "loadStep": {
+                "small": 2.5,
+                "large": 5
+              }
             }
           ]
         }
